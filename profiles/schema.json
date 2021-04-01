@@ -1,0 +1,1291 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "adminPassword": "ubnt",
+            "bandwidthLimit": {
+                "download": {
+                    "enabled": false,
+                    "limit": 1
+                },
+                "upload": {
+                    "enabled": false,
+                    "limit": 1
+                }
+            },
+            "bridgeMode": {
+                "ports": [
+                    {
+                        "includeVLANs": [],
+                        "nativeVLAN": 1,
+                        "port": "1"
+                    },
+                    {
+                        "includeVLANs": [],
+                        "nativeVLAN": 1,
+                        "port": "2"
+                    },
+                    {
+                        "includeVLANs": [],
+                        "nativeVLAN": 1,
+                        "port": "3"
+                    },
+                    {
+                        "includeVLANs": [],
+                        "nativeVLAN": 1,
+                        "port": "4"
+                    },
+                    {
+                        "includeVLANs": [],
+                        "nativeVLAN": 1,
+                        "port": "wifi"
+                    }
+                ]
+            },
+            "enabled": true,
+            "lanAddress": "192.168.1.1/24",
+            "lanProvisioned": true,
+            "lastOnuId": -1,
+            "mode": "bridge",
+            "name": "",
+            "notes": "",
+            "ports": [
+                {
+                    "id": "1",
+                    "speed": "auto"
+                },
+                {
+                    "id": "2",
+                    "speed": "auto"
+                },
+                {
+                    "id": "3",
+                    "speed": "auto"
+                },
+                {
+                    "id": "4",
+                    "speed": "auto"
+                }
+            ],
+            "routerMode": {
+                "dhcpLeaseTime": 600,
+                "dhcpPool": {
+                    "rangeStart": "192.168.1.10",
+                    "rangeStop": "192.168.1.250"
+                },
+                "dhcpRelay": "",
+                "dhcpServerMode": "enabled",
+                "dnsProxyEnabled": true,
+                "firewallEnabled6": true,
+                "gateway": "",
+                "gateway6": "",
+                "ipv6Enabled": false,
+                "lanAddress6": "",
+                "lanMode6": "auto",
+                "nat": {
+                    "ftp": true,
+                    "pptp": true,
+                    "rtsp": true,
+                    "sip": false
+                },
+                "pppoeMode": "auto",
+                "pppoePassword": "",
+                "pppoeUser": "",
+                "routerAdvertisement": {
+                    "mode": "auto",
+                    "prefix": ""
+                },
+                "upnpEnabled": false,
+                "wanAccessBlocked": true,
+                "wanAddress": "",
+                "wanAddress6": "",
+                "wanMode": "dhcp",
+                "wanMode6": "slaac",
+                "wanVLAN": 1,
+                "dnsResolversString": "",
+                "wanDnsResolversString": "",
+                "portForwards": []
+            },
+            "serial": "UBNTFFFFFFFF",
+            "services": {
+                "httpPort": 80,
+                "sshEnabled": false,
+                "sshPort": 22,
+                "telnetEnabled": false,
+                "telnetPort": 23,
+                "ubntDiscoveryEnabled": true
+            },
+            "wifi": {
+                "channel": "auto",
+                "channelWidth": "40",
+                "country": "WO",
+                "countryListId": "1",
+                "enabled": true,
+                "networks": [
+                    {
+                        "authMode": "wpa2psk",
+                        "hideSSID": false,
+                        "key": "",
+                        "ssid": "UBNT-ONU"
+                    }
+                ],
+                "provisioned": false,
+                "txPower": 100
+            }
+        }
+    ],
+    "required": [
+        "adminPassword",
+        "bandwidthLimit",
+        "bridgeMode",
+        "enabled",
+        "lanAddress",
+        "lanProvisioned",
+        "lastOnuId",
+        "mode",
+        "name",
+        "notes",
+        "ports",
+        "routerMode",
+        "serial",
+        "services",
+        "wifi"
+    ],
+    "properties": {
+        "adminPassword": {
+            "$id": "#/properties/adminPassword",
+            "type": "string",
+            "title": "The adminPassword schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "ubnt"
+            ]
+        },
+        "bandwidthLimit": {
+            "$id": "#/properties/bandwidthLimit",
+            "type": "object",
+            "title": "The bandwidthLimit schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "download": {
+                        "enabled": false,
+                        "limit": 1
+                    },
+                    "upload": {
+                        "enabled": false,
+                        "limit": 1
+                    }
+                }
+            ],
+            "required": [
+                "download",
+                "upload"
+            ],
+            "properties": {
+                "download": {
+                    "$id": "#/properties/bandwidthLimit/properties/download",
+                    "type": "object",
+                    "title": "The download schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "enabled": false,
+                            "limit": 1
+                        }
+                    ],
+                    "required": [
+                        "enabled",
+                        "limit"
+                    ],
+                    "properties": {
+                        "enabled": {
+                            "$id": "#/properties/bandwidthLimit/properties/download/properties/enabled",
+                            "type": "boolean",
+                            "title": "The enabled schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                false
+                            ]
+                        },
+                        "limit": {
+                            "$id": "#/properties/bandwidthLimit/properties/download/properties/limit",
+                            "type": "integer",
+                            "title": "The limit schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [
+                                1
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "upload": {
+                    "$id": "#/properties/bandwidthLimit/properties/upload",
+                    "type": "object",
+                    "title": "The upload schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "enabled": false,
+                            "limit": 1
+                        }
+                    ],
+                    "required": [
+                        "enabled",
+                        "limit"
+                    ],
+                    "properties": {
+                        "enabled": {
+                            "$id": "#/properties/bandwidthLimit/properties/upload/properties/enabled",
+                            "type": "boolean",
+                            "title": "The enabled schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                false
+                            ]
+                        },
+                        "limit": {
+                            "$id": "#/properties/bandwidthLimit/properties/upload/properties/limit",
+                            "type": "integer",
+                            "title": "The limit schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": 0,
+                            "examples": [
+                                1
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        },
+        "bridgeMode": {
+            "$id": "#/properties/bridgeMode",
+            "type": "object",
+            "title": "The bridgeMode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "ports": [
+                        {
+                            "includeVLANs": [],
+                            "nativeVLAN": 1,
+                            "port": "1"
+                        },
+                        {
+                            "includeVLANs": [],
+                            "nativeVLAN": 1,
+                            "port": "2"
+                        },
+                        {
+                            "includeVLANs": [],
+                            "nativeVLAN": 1,
+                            "port": "3"
+                        },
+                        {
+                            "includeVLANs": [],
+                            "nativeVLAN": 1,
+                            "port": "4"
+                        },
+                        {
+                            "includeVLANs": [],
+                            "nativeVLAN": 1,
+                            "port": "wifi"
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "ports"
+            ],
+            "properties": {
+                "ports": {
+                    "$id": "#/properties/bridgeMode/properties/ports",
+                    "type": "array",
+                    "title": "The ports schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "includeVLANs": [],
+                                "nativeVLAN": 1,
+                                "port": "1"
+                            },
+                            {
+                                "includeVLANs": [],
+                                "nativeVLAN": 1,
+                                "port": "2"
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/bridgeMode/properties/ports/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/bridgeMode/properties/ports/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "includeVLANs": [],
+                                        "nativeVLAN": 1,
+                                        "port": "1"
+                                    }
+                                ],
+                                "required": [
+                                    "includeVLANs",
+                                    "nativeVLAN",
+                                    "port"
+                                ],
+                                "properties": {
+                                    "includeVLANs": {
+                                        "$id": "#/properties/bridgeMode/properties/ports/items/anyOf/0/properties/includeVLANs",
+                                        "type": "array",
+                                        "title": "The includeVLANs schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": [],
+                                        "examples": [
+                                            []
+                                        ],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "$id": "#/properties/bridgeMode/properties/ports/items/anyOf/0/properties/includeVLANs/items"
+                                        }
+                                    },
+                                    "nativeVLAN": {
+                                        "$id": "#/properties/bridgeMode/properties/ports/items/anyOf/0/properties/nativeVLAN",
+                                        "type": "integer",
+                                        "title": "The nativeVLAN schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "port": {
+                                        "$id": "#/properties/bridgeMode/properties/ports/items/anyOf/0/properties/port",
+                                        "type": "string",
+                                        "title": "The port schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": true
+        },
+        "enabled": {
+            "$id": "#/properties/enabled",
+            "type": "boolean",
+            "title": "The enabled schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "lanAddress": {
+            "$id": "#/properties/lanAddress",
+            "type": "string",
+            "title": "The lanAddress schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "192.168.1.1/24"
+            ]
+        },
+        "lanProvisioned": {
+            "$id": "#/properties/lanProvisioned",
+            "type": "boolean",
+            "title": "The lanProvisioned schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "lastOnuId": {
+            "$id": "#/properties/lastOnuId",
+            "type": "integer",
+            "title": "The lastOnuId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                -1
+            ]
+        },
+        "mode": {
+            "$id": "#/properties/mode",
+            "type": "string",
+            "title": "The mode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "bridge"
+            ]
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "notes": {
+            "$id": "#/properties/notes",
+            "type": "string",
+            "title": "The notes schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "ports": {
+            "$id": "#/properties/ports",
+            "type": "array",
+            "title": "The ports schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "id": "1",
+                        "speed": "auto"
+                    },
+                    {
+                        "id": "2",
+                        "speed": "auto"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/ports/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/ports/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "id": "1",
+                                "speed": "auto"
+                            }
+                        ],
+                        "required": [
+                            "id",
+                            "speed"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/ports/items/anyOf/0/properties/id",
+                                "type": "string",
+                                "title": "The id schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "speed": {
+                                "$id": "#/properties/ports/items/anyOf/0/properties/speed",
+                                "type": "string",
+                                "title": "The speed schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "auto"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "routerMode": {
+            "$id": "#/properties/routerMode",
+            "type": "object",
+            "title": "The routerMode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "dhcpLeaseTime": 600,
+                    "dhcpPool": {
+                        "rangeStart": "192.168.1.10",
+                        "rangeStop": "192.168.1.250"
+                    },
+                    "dhcpRelay": "",
+                    "dhcpServerMode": "enabled",
+                    "dnsProxyEnabled": true,
+                    "firewallEnabled6": true,
+                    "gateway": "",
+                    "gateway6": "",
+                    "ipv6Enabled": false,
+                    "lanAddress6": "",
+                    "lanMode6": "auto",
+                    "nat": {
+                        "ftp": true,
+                        "pptp": true,
+                        "rtsp": true,
+                        "sip": false
+                    },
+                    "pppoeMode": "auto",
+                    "pppoePassword": "",
+                    "pppoeUser": "",
+                    "routerAdvertisement": {
+                        "mode": "auto",
+                        "prefix": ""
+                    },
+                    "upnpEnabled": false,
+                    "wanAccessBlocked": true,
+                    "wanAddress": "",
+                    "wanAddress6": "",
+                    "wanMode": "dhcp",
+                    "wanMode6": "slaac",
+                    "wanVLAN": 1,
+                    "dnsResolversString": "",
+                    "wanDnsResolversString": "",
+                    "portForwards": []
+                }
+            ],
+            "required": [
+                "dhcpLeaseTime",
+                "dhcpPool",
+                "dhcpRelay",
+                "dhcpServerMode",
+                "dnsProxyEnabled",
+                "firewallEnabled6",
+                "gateway",
+                "gateway6",
+                "ipv6Enabled",
+                "lanAddress6",
+                "lanMode6",
+                "nat",
+                "pppoeMode",
+                "pppoePassword",
+                "pppoeUser",
+                "routerAdvertisement",
+                "upnpEnabled",
+                "wanAccessBlocked",
+                "wanAddress",
+                "wanAddress6",
+                "wanMode",
+                "wanMode6",
+                "wanVLAN",
+                "dnsResolversString",
+                "wanDnsResolversString",
+                "portForwards"
+            ],
+            "properties": {
+                "dhcpLeaseTime": {
+                    "$id": "#/properties/routerMode/properties/dhcpLeaseTime",
+                    "type": "integer",
+                    "title": "The dhcpLeaseTime schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        600
+                    ]
+                },
+                "dhcpPool": {
+                    "$id": "#/properties/routerMode/properties/dhcpPool",
+                    "type": "object",
+                    "title": "The dhcpPool schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "rangeStart": "192.168.1.10",
+                            "rangeStop": "192.168.1.250"
+                        }
+                    ],
+                    "required": [
+                        "rangeStart",
+                        "rangeStop"
+                    ],
+                    "properties": {
+                        "rangeStart": {
+                            "$id": "#/properties/routerMode/properties/dhcpPool/properties/rangeStart",
+                            "type": "string",
+                            "title": "The rangeStart schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "192.168.1.10"
+                            ]
+                        },
+                        "rangeStop": {
+                            "$id": "#/properties/routerMode/properties/dhcpPool/properties/rangeStop",
+                            "type": "string",
+                            "title": "The rangeStop schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "192.168.1.250"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "dhcpRelay": {
+                    "$id": "#/properties/routerMode/properties/dhcpRelay",
+                    "type": "string",
+                    "title": "The dhcpRelay schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "dhcpServerMode": {
+                    "$id": "#/properties/routerMode/properties/dhcpServerMode",
+                    "type": "string",
+                    "title": "The dhcpServerMode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "enabled"
+                    ]
+                },
+                "dnsProxyEnabled": {
+                    "$id": "#/properties/routerMode/properties/dnsProxyEnabled",
+                    "type": "boolean",
+                    "title": "The dnsProxyEnabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                },
+                "firewallEnabled6": {
+                    "$id": "#/properties/routerMode/properties/firewallEnabled6",
+                    "type": "boolean",
+                    "title": "The firewallEnabled6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                },
+                "gateway": {
+                    "$id": "#/properties/routerMode/properties/gateway",
+                    "type": "string",
+                    "title": "The gateway schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "gateway6": {
+                    "$id": "#/properties/routerMode/properties/gateway6",
+                    "type": "string",
+                    "title": "The gateway6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "ipv6Enabled": {
+                    "$id": "#/properties/routerMode/properties/ipv6Enabled",
+                    "type": "boolean",
+                    "title": "The ipv6Enabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "lanAddress6": {
+                    "$id": "#/properties/routerMode/properties/lanAddress6",
+                    "type": "string",
+                    "title": "The lanAddress6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "lanMode6": {
+                    "$id": "#/properties/routerMode/properties/lanMode6",
+                    "type": "string",
+                    "title": "The lanMode6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "auto"
+                    ]
+                },
+                "nat": {
+                    "$id": "#/properties/routerMode/properties/nat",
+                    "type": "object",
+                    "title": "The nat schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "ftp": true,
+                            "pptp": true,
+                            "rtsp": true,
+                            "sip": false
+                        }
+                    ],
+                    "required": [
+                        "ftp",
+                        "pptp",
+                        "rtsp",
+                        "sip"
+                    ],
+                    "properties": {
+                        "ftp": {
+                            "$id": "#/properties/routerMode/properties/nat/properties/ftp",
+                            "type": "boolean",
+                            "title": "The ftp schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                true
+                            ]
+                        },
+                        "pptp": {
+                            "$id": "#/properties/routerMode/properties/nat/properties/pptp",
+                            "type": "boolean",
+                            "title": "The pptp schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                true
+                            ]
+                        },
+                        "rtsp": {
+                            "$id": "#/properties/routerMode/properties/nat/properties/rtsp",
+                            "type": "boolean",
+                            "title": "The rtsp schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                true
+                            ]
+                        },
+                        "sip": {
+                            "$id": "#/properties/routerMode/properties/nat/properties/sip",
+                            "type": "boolean",
+                            "title": "The sip schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": false,
+                            "examples": [
+                                false
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "pppoeMode": {
+                    "$id": "#/properties/routerMode/properties/pppoeMode",
+                    "type": "string",
+                    "title": "The pppoeMode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "auto"
+                    ]
+                },
+                "pppoePassword": {
+                    "$id": "#/properties/routerMode/properties/pppoePassword",
+                    "type": "string",
+                    "title": "The pppoePassword schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "pppoeUser": {
+                    "$id": "#/properties/routerMode/properties/pppoeUser",
+                    "type": "string",
+                    "title": "The pppoeUser schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "routerAdvertisement": {
+                    "$id": "#/properties/routerMode/properties/routerAdvertisement",
+                    "type": "object",
+                    "title": "The routerAdvertisement schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "mode": "auto",
+                            "prefix": ""
+                        }
+                    ],
+                    "required": [
+                        "mode",
+                        "prefix"
+                    ],
+                    "properties": {
+                        "mode": {
+                            "$id": "#/properties/routerMode/properties/routerAdvertisement/properties/mode",
+                            "type": "string",
+                            "title": "The mode schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "auto"
+                            ]
+                        },
+                        "prefix": {
+                            "$id": "#/properties/routerMode/properties/routerAdvertisement/properties/prefix",
+                            "type": "string",
+                            "title": "The prefix schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                ""
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "upnpEnabled": {
+                    "$id": "#/properties/routerMode/properties/upnpEnabled",
+                    "type": "boolean",
+                    "title": "The upnpEnabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "wanAccessBlocked": {
+                    "$id": "#/properties/routerMode/properties/wanAccessBlocked",
+                    "type": "boolean",
+                    "title": "The wanAccessBlocked schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                },
+                "wanAddress": {
+                    "$id": "#/properties/routerMode/properties/wanAddress",
+                    "type": "string",
+                    "title": "The wanAddress schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "wanAddress6": {
+                    "$id": "#/properties/routerMode/properties/wanAddress6",
+                    "type": "string",
+                    "title": "The wanAddress6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "wanMode": {
+                    "$id": "#/properties/routerMode/properties/wanMode",
+                    "type": "string",
+                    "title": "The wanMode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "dhcp"
+                    ]
+                },
+                "wanMode6": {
+                    "$id": "#/properties/routerMode/properties/wanMode6",
+                    "type": "string",
+                    "title": "The wanMode6 schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "slaac"
+                    ]
+                },
+                "wanVLAN": {
+                    "$id": "#/properties/routerMode/properties/wanVLAN",
+                    "type": "integer",
+                    "title": "The wanVLAN schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "dnsResolversString": {
+                    "$id": "#/properties/routerMode/properties/dnsResolversString",
+                    "type": "string",
+                    "title": "The dnsResolversString schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "wanDnsResolversString": {
+                    "$id": "#/properties/routerMode/properties/wanDnsResolversString",
+                    "type": "string",
+                    "title": "The wanDnsResolversString schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "portForwards": {
+                    "$id": "#/properties/routerMode/properties/portForwards",
+                    "type": "array",
+                    "title": "The portForwards schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        []
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/routerMode/properties/portForwards/items"
+                    }
+                }
+            },
+            "additionalProperties": true
+        },
+        "serial": {
+            "$id": "#/properties/serial",
+            "type": "string",
+            "title": "The serial schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "UBNTFFFFFFFF"
+            ]
+        },
+        "services": {
+            "$id": "#/properties/services",
+            "type": "object",
+            "title": "The services schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "httpPort": 80,
+                    "sshEnabled": false,
+                    "sshPort": 22,
+                    "telnetEnabled": false,
+                    "telnetPort": 23,
+                    "ubntDiscoveryEnabled": true
+                }
+            ],
+            "required": [
+                "httpPort",
+                "sshEnabled",
+                "sshPort",
+                "telnetEnabled",
+                "telnetPort",
+                "ubntDiscoveryEnabled"
+            ],
+            "properties": {
+                "httpPort": {
+                    "$id": "#/properties/services/properties/httpPort",
+                    "type": "integer",
+                    "title": "The httpPort schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        80
+                    ]
+                },
+                "sshEnabled": {
+                    "$id": "#/properties/services/properties/sshEnabled",
+                    "type": "boolean",
+                    "title": "The sshEnabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "sshPort": {
+                    "$id": "#/properties/services/properties/sshPort",
+                    "type": "integer",
+                    "title": "The sshPort schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "telnetEnabled": {
+                    "$id": "#/properties/services/properties/telnetEnabled",
+                    "type": "boolean",
+                    "title": "The telnetEnabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "telnetPort": {
+                    "$id": "#/properties/services/properties/telnetPort",
+                    "type": "integer",
+                    "title": "The telnetPort schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        23
+                    ]
+                },
+                "ubntDiscoveryEnabled": {
+                    "$id": "#/properties/services/properties/ubntDiscoveryEnabled",
+                    "type": "boolean",
+                    "title": "The ubntDiscoveryEnabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "wifi": {
+            "$id": "#/properties/wifi",
+            "type": "object",
+            "title": "The wifi schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "channel": "auto",
+                    "channelWidth": "40",
+                    "country": "WO",
+                    "countryListId": "1",
+                    "enabled": true,
+                    "networks": [
+                        {
+                            "authMode": "wpa2psk",
+                            "hideSSID": false,
+                            "key": "",
+                            "ssid": "UBNT-ONU"
+                        }
+                    ],
+                    "provisioned": false,
+                    "txPower": 100
+                }
+            ],
+            "required": [
+                "channel",
+                "channelWidth",
+                "country",
+                "countryListId",
+                "enabled",
+                "networks",
+                "provisioned",
+                "txPower"
+            ],
+            "properties": {
+                "channel": {
+                    "$id": "#/properties/wifi/properties/channel",
+                    "type": "string",
+                    "title": "The channel schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "auto"
+                    ]
+                },
+                "channelWidth": {
+                    "$id": "#/properties/wifi/properties/channelWidth",
+                    "type": "string",
+                    "title": "The channelWidth schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "40"
+                    ]
+                },
+                "country": {
+                    "$id": "#/properties/wifi/properties/country",
+                    "type": "string",
+                    "title": "The country schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "WO"
+                    ]
+                },
+                "countryListId": {
+                    "$id": "#/properties/wifi/properties/countryListId",
+                    "type": "string",
+                    "title": "The countryListId schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "enabled": {
+                    "$id": "#/properties/wifi/properties/enabled",
+                    "type": "boolean",
+                    "title": "The enabled schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                },
+                "networks": {
+                    "$id": "#/properties/wifi/properties/networks",
+                    "type": "array",
+                    "title": "The networks schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "authMode": "wpa2psk",
+                                "hideSSID": false,
+                                "key": "",
+                                "ssid": "UBNT-ONU"
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/wifi/properties/networks/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/wifi/properties/networks/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "authMode": "wpa2psk",
+                                        "hideSSID": false,
+                                        "key": "",
+                                        "ssid": "UBNT-ONU"
+                                    }
+                                ],
+                                "required": [
+                                    "authMode",
+                                    "hideSSID",
+                                    "key",
+                                    "ssid"
+                                ],
+                                "properties": {
+                                    "authMode": {
+                                        "$id": "#/properties/wifi/properties/networks/items/anyOf/0/properties/authMode",
+                                        "type": "string",
+                                        "title": "The authMode schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "wpa2psk"
+                                        ]
+                                    },
+                                    "hideSSID": {
+                                        "$id": "#/properties/wifi/properties/networks/items/anyOf/0/properties/hideSSID",
+                                        "type": "boolean",
+                                        "title": "The hideSSID schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            false
+                                        ]
+                                    },
+                                    "key": {
+                                        "$id": "#/properties/wifi/properties/networks/items/anyOf/0/properties/key",
+                                        "type": "string",
+                                        "title": "The key schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            ""
+                                        ]
+                                    },
+                                    "ssid": {
+                                        "$id": "#/properties/wifi/properties/networks/items/anyOf/0/properties/ssid",
+                                        "type": "string",
+                                        "title": "The ssid schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "UBNT-ONU"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                },
+                "provisioned": {
+                    "$id": "#/properties/wifi/properties/provisioned",
+                    "type": "boolean",
+                    "title": "The provisioned schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "txPower": {
+                    "$id": "#/properties/wifi/properties/txPower",
+                    "type": "integer",
+                    "title": "The txPower schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

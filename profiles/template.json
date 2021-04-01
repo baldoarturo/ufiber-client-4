@@ -1,0 +1,132 @@
+{
+    "adminPassword": "ubnt",
+    "bandwidthLimit": {
+        "download": {
+            "enabled": false,
+            "limit": 1
+        },
+        "upload": {
+            "enabled": false,
+            "limit": 1
+        }
+    },
+    "bridgeMode": {
+        "ports": [
+            {
+                "includeVLANs": [],
+                "nativeVLAN": 1,
+                "port": "1"
+            },
+            {
+                "includeVLANs": [],
+                "nativeVLAN": 1,
+                "port": "2"
+            },
+            {
+                "includeVLANs": [],
+                "nativeVLAN": 1,
+                "port": "3"
+            },
+            {
+                "includeVLANs": [],
+                "nativeVLAN": 1,
+                "port": "4"
+            },
+            {
+                "includeVLANs": [],
+                "nativeVLAN": 1,
+                "port": "wifi"
+            }
+        ]
+    },
+    "enabled": true,
+    "lanAddress": "192.168.1.1/24",
+    "lanProvisioned": true,
+    "lastOnuId": -1,
+    "mode": "bridge",
+    "name": "",
+    "notes": "",
+    "ports": [
+        {
+            "id": "1",
+            "speed": "auto"
+        },
+        {
+            "id": "2",
+            "speed": "auto"
+        },
+        {
+            "id": "3",
+            "speed": "auto"
+        },
+        {
+            "id": "4",
+            "speed": "auto"
+        }
+    ],
+    "routerMode": {
+        "dhcpLeaseTime": 600,
+        "dhcpPool": {
+            "rangeStart": "192.168.1.10",
+            "rangeStop": "192.168.1.250"
+        },
+        "dhcpRelay": "",
+        "dhcpServerMode": "enabled",
+        "dnsProxyEnabled": true,
+        "firewallEnabled6": true,
+        "gateway": "",
+        "gateway6": "",
+        "ipv6Enabled": false,
+        "lanAddress6": "",
+        "lanMode6": "auto",
+        "nat": {
+            "ftp": true,
+            "pptp": true,
+            "rtsp": true,
+            "sip": false
+        },
+        "pppoeMode": "auto",
+        "pppoePassword": "",
+        "pppoeUser": "",
+        "routerAdvertisement": {
+            "mode": "auto",
+            "prefix": ""
+        },
+        "upnpEnabled": false,
+        "wanAccessBlocked": true,
+        "wanAddress": "",
+        "wanAddress6": "",
+        "wanMode": "dhcp",
+        "wanMode6": "slaac",
+        "wanVLAN": 1,
+        "dnsResolversString": "",
+        "wanDnsResolversString": "",
+        "portForwards": []
+    },
+    "serial": "UBNTFFFFFFFF",
+    "services": {
+        "httpPort": 80,
+        "sshEnabled": false,
+        "sshPort": 22,
+        "telnetEnabled": false,
+        "telnetPort": 23,
+        "ubntDiscoveryEnabled": true
+    },
+    "wifi": {
+        "channel": "auto",
+        "channelWidth": "40",
+        "country": "WO",
+        "countryListId": "1",
+        "enabled": true,
+        "networks": [
+            {
+                "authMode": "wpa2psk",
+                "hideSSID": false,
+                "key": "",
+                "ssid": "UBNT-ONU"
+            }
+        ],
+        "provisioned": false,
+        "txPower": 100
+    }
+}
